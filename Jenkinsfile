@@ -9,7 +9,7 @@ pipeline {
 
 		stage('OWASP DependencyCheck') {
 			steps {
-				dependencyCheck additionalArguments: '--format HTML --format XML', 
+				dependencyCheck additionalArguments: '--format HTML --format XML --suppression suppression.xml', 
 				
 				// MUST MATCH THE FILE NAME
 				odcInstallation: 'OWASP DEPENDENCY CHECK'
